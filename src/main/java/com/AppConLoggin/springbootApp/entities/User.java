@@ -42,6 +42,7 @@ public class User implements Serializable {
   @Column
   private String password;
 
+
   @Transient
   private String confirmPassword;
 
