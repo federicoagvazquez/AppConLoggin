@@ -14,10 +14,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 
 @Entity
+@Data
+@NoArgsConstructor
 public class User implements Serializable {
 
   private static final long serialVersionUID = -6833167247953613395L;
@@ -46,11 +50,5 @@ public class User implements Serializable {
       , joinColumns = @JoinColumn(name = "user_id")
       , inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles;
-
-  public User() {
-
-    roles = new HashSet<>();
-
-  }
 
 }
